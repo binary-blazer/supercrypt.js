@@ -1,12 +1,15 @@
 {
   "name": "supercrypt.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🎉 modern numeric-ascii encryption & decryption package",
   "exports": {
     ".": {
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
     }
+  },
+  "engines": {
+    "node": ">=18"
   },
   "scripts": {
     "build:esm": "tsc -p tsconfig.esm.json",
@@ -15,7 +18,8 @@
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "lint:check": "eslint .",
-    "lint": "eslint --fix ."
+    "lint": "eslint --fix .",
+    "publish:ready": "npm run format:check && npm run lint:check && npm run build"
   },
   "keywords": [],
   "author": {

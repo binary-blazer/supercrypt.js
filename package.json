@@ -16,7 +16,8 @@
     "format": "prettier --write .",
     "lint:check": "eslint .",
     "lint": "eslint --fix .",
-    "publish:ready": "npm run lint && npm run format && npm run build"
+    "publish:ready": "npm run lint && npm run format && npm run build",
+    "publish": "npm run publish:ready && npm publish"
   },
   "keywords": [],
   "author": {

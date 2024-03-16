@@ -20,6 +20,7 @@
     "format": "prettier --write .",
     "lint:check": "eslint .",
     "lint": "eslint --fix .",
+    "publish:ready": "pnpm run lint && pnpm run format && pnpm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

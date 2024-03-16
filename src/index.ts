@@ -1,12 +1,4 @@
-import Decrypt from "./functions/decrypt";
-import Encrypt from "./functions/encrypt";
+import encrypt from "./functions/encrypt";
+import decrypt from "./functions/decrypt";
 
-const SuperCryptJS = {
-  Decrypt,
-  Encrypt,
-};
-
-export default SuperCryptJS as typeof SuperCryptJS & {
-  Decrypt: typeof Decrypt;
-  Encrypt: typeof Encrypt;
-};
+export { encrypt, decrypt };

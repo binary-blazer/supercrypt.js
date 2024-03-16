@@ -1,9 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var decrypt_1 = require("./functions/decrypt");
+exports.decrypt = exports.encrypt = void 0;
 var encrypt_1 = require("./functions/encrypt");
-var SuperCryptJS = {
-    Decrypt: decrypt_1.default,
-    Encrypt: encrypt_1.default,
-};
-exports.default = SuperCryptJS;
+exports.encrypt = encrypt_1.default;
+var decrypt_1 = require("./functions/decrypt");
+exports.decrypt = decrypt_1.default;

@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-function Encrypt(_a) {
+function encrypt(_a) {
     return __awaiter(this, arguments, void 0, function (_b) {
         var encryptedText;
         var text = _b.text;
@@ -56,4 +56,4 @@ function Encrypt(_a) {
         });
     });
 }
-exports.default = Encrypt;
+exports.default = encrypt;

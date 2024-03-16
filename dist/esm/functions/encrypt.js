@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-async function Encrypt({ text }) {
+async function encrypt({ text }) {
     const encryptedText = await fetch("https://supercryptjs-api-v2.binaryblazer.me/api/encrypt", {
         method: "POST",
         body: JSON.stringify({ text }),
@@ -10,4 +10,4 @@ async function Encrypt({ text }) {
     });
     return encryptedText;
 }
-exports.default = Encrypt;
+exports.default = encrypt;

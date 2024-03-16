@@ -8,6 +8,7 @@ async function encrypt({ text }) {
             "Content-Type": "application/json",
         },
     }).then((res) => res.json());
-    return encryptedText.result;
+    const result = encryptedText.result;
+    return result;
 }
 exports.default = encrypt;

@@ -8,6 +8,7 @@ async function decrypt({ encryption }) {
             "Content-Type": "application/json",
         },
     }).then((res) => res.json());
-    return decryptedText.result;
+    const result = decryptedText.result;
+    return result;
 }
 exports.default = decrypt;

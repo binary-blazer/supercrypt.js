@@ -10,7 +10,8 @@ async function encrypt({ text }: { text: string }) {
     },
   ).then((res) => res.json());
 
-  return encryptedText.result;
+  const result = encryptedText.result;
+  return result;
 }
 
 export default encrypt;

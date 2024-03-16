@@ -38,7 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 function encrypt(_a) {
     return __awaiter(this, arguments, void 0, function (_b) {
-        var encryptedText;
+        var encryptedText, result;
         var text = _b.text;
         return __generator(this, function (_c) {
             switch (_c.label) {
@@ -51,7 +51,8 @@ function encrypt(_a) {
                     }).then(function (res) { return res.json(); })];
                 case 1:
                     encryptedText = _c.sent();
-                    return [2 /*return*/, encryptedText.result];
+                    result = encryptedText.result;
+                    return [2 /*return*/, result];
             }
         });
     });

@@ -1,4 +1,4 @@
-export default async function decrypt({ encryption }: { encryption: string }) {
+async function Decrypt({ encryption }: { encryption: string }) {
   const decryptedText = await fetch(
     "https://supercryptjs-api-v2.binaryblazer.me/api/decrypt",
     {
@@ -12,3 +12,5 @@ export default async function decrypt({ encryption }: { encryption: string }) {
 
   return decryptedText;
 }
+
+export default Decrypt;

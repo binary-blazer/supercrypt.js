@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "outDir": "dist/esm",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "undici-types": ["./node_modules/undici-types"]
+    }
+  },
+  "include": ["src"]
+}

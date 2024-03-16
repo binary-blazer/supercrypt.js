@@ -2,10 +2,20 @@
   "name": "supercrypt.js",
   "version": "1.0.0",
   "description": "🎉 modern numeric-ascii encryption & decryption package",
-  "main": "dist/index.js",
-  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./index.js": "./dist/cjs/index.js",
+    "./index.mjs": "./dist/esm/index.js"
+  },
   "scripts": {
-    "build": "tsc",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "pnpm run build:esm && pnpm run build:cjs",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "lint:check": "eslint .",
@@ -19,10 +29,12 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
+    "@types/node": "^20.11.28",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "eslint": "^8.57.0",
     "prettier": "3.2.5",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.2",
+    "undici-types": "^6.9.0"
   }
 }

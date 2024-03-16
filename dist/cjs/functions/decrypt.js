@@ -48,10 +48,10 @@ function decrypt(_a) {
                         headers: {
                             "Content-Type": "application/json",
                         },
-                    })];
+                    }).then(function (res) { return res.json(); })];
                 case 1:
                     decryptedText = _c.sent();
-                    return [2 /*return*/, decryptedText];
+                    return [2 /*return*/, decryptedText.result];
             }
         });
     });

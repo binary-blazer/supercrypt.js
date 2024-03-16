@@ -48,10 +48,10 @@ function encrypt(_a) {
                         headers: {
                             "Content-Type": "application/json",
                         },
-                    })];
+                    }).then(function (res) { return res.json(); })];
                 case 1:
                     encryptedText = _c.sent();
-                    return [2 /*return*/, encryptedText];
+                    return [2 /*return*/, encryptedText.result];
             }
         });
     });

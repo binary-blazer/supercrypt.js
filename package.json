@@ -1,0 +1,27 @@
+{
+  "name": "supercrypt.js",
+  "version": "1.0.0",
+  "description": "🎉 modern numeric-ascii encryption & decryption package",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "lint:check": "eslint .",
+    "lint": "eslint --fix .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Jonas Franke <@binary-blazer>",
+    "email": "jonasfranke@sdevs.org"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "eslint": "^8.57.0",
+    "prettier": "3.2.5",
+    "typescript": "^5.4.2"
+  }
+}

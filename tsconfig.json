@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "outDir": "dist",
+    "strict": true
+  },
+  "include": ["src/**/*.ts", "readme.md"],
+  "exclude": ["node_modules"]
+}

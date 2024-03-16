@@ -2,15 +2,11 @@
   "name": "supercrypt.js",
   "version": "1.0.0",
   "description": "🎉 modern numeric-ascii encryption & decryption package",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
   "exports": {
     ".": {
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
-    },
-    "./index.js": "./dist/cjs/index.js",
-    "./index.mjs": "./dist/esm/index.js"
+    }
   },
   "scripts": {
     "build:esm": "tsc -p tsconfig.esm.json",

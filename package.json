@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "🎉 modern numeric-ascii encryption & decryption package",
   "main": "dist/index.js",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "format:check": "prettier --check .",

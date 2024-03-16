@@ -38,7 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 function decrypt(_a) {
     return __awaiter(this, arguments, void 0, function (_b) {
-        var decryptedText, result;
+        var decryptedText, _result;
         var encryption = _b.encryption;
         return __generator(this, function (_c) {
             switch (_c.label) {
@@ -51,8 +51,10 @@ function decrypt(_a) {
                     }).then(function (res) { return res.json(); })];
                 case 1:
                     decryptedText = _c.sent();
-                    result = decryptedText.result;
-                    return [2 /*return*/, result];
+                    return [4 /*yield*/, decryptedText.result];
+                case 2:
+                    _result = _c.sent();
+                    return [2 /*return*/, _result];
             }
         });
     });

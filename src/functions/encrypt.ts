@@ -1,4 +1,13 @@
-async function encrypt(...texts: string[]) {
+interface EncryptOptions {
+  returnArray?: boolean;
+}
+
+async function encrypt(...args: (string | EncryptOptions)[]) {
+  const texts = args.filter((arg) => typeof arg === "string") as string[];
+  const options = args.find((arg) => typeof arg === "object") as
+    | EncryptOptions
+    | undefined;
+
   const requests = texts.map((text) =>
     fetch("https://supercryptjs-api-v2.binaryblazer.me/api/encrypt", {
       method: "POST",
@@ -11,7 +20,8 @@ async function encrypt(...texts: string[]) {
 
   const encryptedTexts = await Promise.all(requests);
   const results = encryptedTexts.map((text) => text.result);
-  return results;
+
+  return options?.returnArray ? results : results.join("\n");
 }
 
 export default encrypt;

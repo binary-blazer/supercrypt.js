@@ -37,15 +37,17 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 function decrypt() {
-    var encryptions = [];
+    var args = [];
     for (var _i = 0; _i < arguments.length; _i++) {
-        encryptions[_i] = arguments[_i];
+        args[_i] = arguments[_i];
     }
     return __awaiter(this, void 0, void 0, function () {
-        var requests, decryptedTexts, results;
+        var encryptions, options, requests, decryptedTexts, results;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    encryptions = args.filter(function (arg) { return typeof arg === "string"; });
+                    options = args.find(function (arg) { return typeof arg === "object"; });
                     requests = encryptions.map(function (encryption) {
                         return fetch("https://supercryptjs-api-v2.binaryblazer.me/api/decrypt", {
                             method: "POST",
@@ -59,7 +61,7 @@ function decrypt() {
                 case 1:
                     decryptedTexts = _a.sent();
                     results = decryptedTexts.map(function (text) { return text.result; });
-                    return [2 /*return*/, results.join("\n")];
+                    return [2 /*return*/, (options === null || options === void 0 ? void 0 : options.returnArray) ? results : results.join("\n")];
             }
         });
     });

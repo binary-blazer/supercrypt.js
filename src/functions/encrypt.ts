@@ -19,7 +19,7 @@ async function encrypt(...args: (string | EncryptOptions)[]) {
   );
 
   const encryptedTexts = await Promise.all(requests);
-  const results = encryptedTexts; // encryptedTexts.map((text) => text.result);
+  const results = encryptedTexts.map((text) => text.result);
 
   return options?.returnArray ? results : results.join("\n");
 }

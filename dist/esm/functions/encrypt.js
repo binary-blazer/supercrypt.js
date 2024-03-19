@@ -11,7 +11,7 @@ async function encrypt(...args) {
         },
     }).then((res) => res.json()));
     const encryptedTexts = await Promise.all(requests);
-    const results = encryptedTexts; // encryptedTexts.map((text) => text.result);
+    const results = encryptedTexts.map((text) => text.result);
     return options?.returnArray ? results : results.join("\n");
 }
 exports.default = encrypt;

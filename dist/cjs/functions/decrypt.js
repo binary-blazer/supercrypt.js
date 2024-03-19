@@ -61,6 +61,15 @@ function decrypt() {
                 case 1:
                     decryptedTexts = _a.sent();
                     results = decryptedTexts.map(function (text) { return text.result; });
+                    if (options === null || options === void 0 ? void 0 : options.trim) {
+                        results = results.map(function (result) { return result.trim(); });
+                    }
+                    if (options === null || options === void 0 ? void 0 : options.toLowerCase) {
+                        results = results.map(function (result) { return result.toLowerCase(); });
+                    }
+                    if (options === null || options === void 0 ? void 0 : options.toUpperCase) {
+                        results = results.map(function (result) { return result.toUpperCase(); });
+                    }
                     return [2 /*return*/, (options === null || options === void 0 ? void 0 : options.returnArray) ? results : results.join("\n")];
             }
         });

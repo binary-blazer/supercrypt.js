@@ -48,6 +48,15 @@ function encrypt() {
                 case 0:
                     texts = args.filter(function (arg) { return typeof arg === "string"; });
                     options = args.find(function (arg) { return typeof arg === "object"; });
+                    if (options === null || options === void 0 ? void 0 : options.trim) {
+                        texts = texts.map(function (text) { return text.trim(); });
+                    }
+                    if (options === null || options === void 0 ? void 0 : options.toLowerCase) {
+                        texts = texts.map(function (text) { return text.toLowerCase(); });
+                    }
+                    if (options === null || options === void 0 ? void 0 : options.toUpperCase) {
+                        texts = texts.map(function (text) { return text.toUpperCase(); });
+                    }
                     requests = texts.map(function (text) {
                         return fetch("https://supercryptjs-api-v2.binaryblazer.me/api/encrypt", {
                             method: "POST",

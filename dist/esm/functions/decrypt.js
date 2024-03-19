@@ -11,7 +11,16 @@ async function decrypt(...args) {
         },
     }).then((res) => res.json()));
     const decryptedTexts = await Promise.all(requests);
-    const results = decryptedTexts.map((text) => text.result);
+    let results = decryptedTexts.map((text) => text.result);
+    if (options?.trim) {
+        results = results.map((result) => result.trim());
+    }
+    if (options?.toLowerCase) {
+        results = results.map((result) => result.toLowerCase());
+    }
+    if (options?.toUpperCase) {
+        results = results.map((result) => result.toUpperCase());
+    }
     return options?.returnArray ? results : results.join("\n");
 }
 exports.default = decrypt;

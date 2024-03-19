@@ -1,6 +1,6 @@
 {
   "name": "supercrypt.js",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "🎉 modern numeric-ascii encryption & decryption package",
   "exports": {
     ".": {

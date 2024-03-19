@@ -1,17 +1,17 @@
-async function decrypt({ encryption }: { encryption: string }) {
-  const decryptedText = await fetch(
-    "https://supercryptjs-api-v2.binaryblazer.me/api/decrypt",
-    {
+async function decrypt(...encryptions: string[]) {
+  const requests = encryptions.map((encryption) =>
+    fetch("https://supercryptjs-api-v2.binaryblazer.me/api/decrypt", {
       method: "POST",
       body: JSON.stringify({ encryption }),
       headers: {
         "Content-Type": "application/json",
       },
-    },
-  ).then((res) => res.json());
+    }).then((res) => res.json()),
+  );
 
-  const _result = await decryptedText.result;
-  return _result;
+  const decryptedTexts = await Promise.all(requests);
+  const results = decryptedTexts.map((text) => text.result);
+  return results;
 }
 
 export default decrypt;

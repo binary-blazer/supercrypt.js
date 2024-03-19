@@ -36,25 +36,30 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-function encrypt(_a) {
-    return __awaiter(this, arguments, void 0, function (_b) {
-        var encryptedText, _result;
-        var text = _b.text;
-        return __generator(this, function (_c) {
-            switch (_c.label) {
-                case 0: return [4 /*yield*/, fetch("https://supercryptjs-api-v2.binaryblazer.me/api/encrypt", {
-                        method: "POST",
-                        body: JSON.stringify({ text: text }),
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                    }).then(function (res) { return res.json(); })];
+function encrypt() {
+    var texts = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        texts[_i] = arguments[_i];
+    }
+    return __awaiter(this, void 0, void 0, function () {
+        var requests, encryptedTexts, results;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    requests = texts.map(function (text) {
+                        return fetch("https://supercryptjs-api-v2.binaryblazer.me/api/encrypt", {
+                            method: "POST",
+                            body: JSON.stringify({ text: text }),
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        }).then(function (res) { return res.json(); });
+                    });
+                    return [4 /*yield*/, Promise.all(requests)];
                 case 1:
-                    encryptedText = _c.sent();
-                    return [4 /*yield*/, encryptedText.result];
-                case 2:
-                    _result = _c.sent();
-                    return [2 /*return*/, _result];
+                    encryptedTexts = _a.sent();
+                    results = encryptedTexts.map(function (text) { return text.result; });
+                    return [2 /*return*/, results];
             }
         });
     });

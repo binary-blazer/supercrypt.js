@@ -60,7 +60,7 @@ function decrypt() {
                     return [4 /*yield*/, Promise.all(requests)];
                 case 1:
                     decryptedTexts = _a.sent();
-                    results = decryptedTexts.map(function (text) { return text.result; });
+                    results = decryptedTexts;
                     return [2 /*return*/, (options === null || options === void 0 ? void 0 : options.returnArray) ? results : results.join("\n")];
             }
         });

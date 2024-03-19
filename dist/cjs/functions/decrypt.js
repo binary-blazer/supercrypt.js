@@ -59,7 +59,7 @@ function decrypt() {
                 case 1:
                     decryptedTexts = _a.sent();
                     results = decryptedTexts.map(function (text) { return text.result; });
-                    return [2 /*return*/, results];
+                    return [2 /*return*/, results.join("\n")];
             }
         });
     });

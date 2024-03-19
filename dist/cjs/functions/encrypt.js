@@ -59,7 +59,7 @@ function encrypt() {
                 case 1:
                     encryptedTexts = _a.sent();
                     results = encryptedTexts.map(function (text) { return text.result; });
-                    return [2 /*return*/, results];
+                    return [2 /*return*/, results.join("\n")];
             }
         });
     });

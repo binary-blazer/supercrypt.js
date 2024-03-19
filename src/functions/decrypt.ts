@@ -11,7 +11,7 @@ async function decrypt(...encryptions: string[]) {
 
   const decryptedTexts = await Promise.all(requests);
   const results = decryptedTexts.map((text) => text.result);
-  return results;
+  return results.join("\n");
 }
 
 export default decrypt;

@@ -10,6 +10,6 @@ async function decrypt(...encryptions) {
     }).then((res) => res.json()));
     const decryptedTexts = await Promise.all(requests);
     const results = decryptedTexts.map((text) => text.result);
-    return results;
+    return results.join("\n");
 }
 exports.default = decrypt;
